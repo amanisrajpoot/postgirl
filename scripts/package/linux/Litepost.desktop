@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Litepost
+Comment=Lightweight Postman alternative
+Exec=/absolute/path/to/run-litepost.sh
+Icon=utilities-terminal
+Terminal=false
+Categories=Development;Network;

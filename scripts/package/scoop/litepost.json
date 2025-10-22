@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "description": "Lightweight Postman alternative",
+  "homepage": "https://github.com/yourname/litepost",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/yourname/litepost/releases/download/v0.1.0/litepost-windows-amd64.zip",
+      "hash": "PUT_SHA256_HERE"
+    }
+  },
+  "bin": "litepost-windows-amd64\\litepost.exe",
+  "checkver": "github",
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/yourname/litepost/releases/download/$version/litepost-windows-amd64.zip"
+      }
+    }
+  }
+}

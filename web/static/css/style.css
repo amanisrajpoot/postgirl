@@ -1,0 +1,466 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #7D56F4 0%, #5A3FD8 100%);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #333;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.subtitle {
+    color: #E0E0E0;
+    font-size: 0.9rem;
+}
+
+/* Main Layout */
+.main-content {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2a2a2a;
+    border-right: 1px solid #333;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.sidebar-section {
+    margin-bottom: 2rem;
+}
+
+.sidebar-section h3 {
+    color: #7D56F4;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.collection-item, .environment-item {
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 0.25rem;
+}
+
+.collection-item:hover, .environment-item:hover {
+    background-color: #3a3a3a;
+}
+
+.environment-item.active {
+    background-color: #7D56F4;
+}
+
+.collection-name, .environment-name {
+    display: block;
+    font-weight: 500;
+}
+
+.collection-count {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Main Panel */
+.main-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+}
+
+/* Request Builder */
+.request-builder {
+    background-color: #2a2a2a;
+    border-bottom: 1px solid #333;
+    padding: 1rem;
+}
+
+.request-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.method-selector select {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    min-width: 80px;
+}
+
+.url-input {
+    flex: 1;
+}
+
+.url-input input {
+    width: 100%;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.url-input input:focus {
+    outline: none;
+    border-color: #7D56F4;
+}
+
+.send-button {
+    background: linear-gradient(135deg, #7D56F4 0%, #5A3FD8 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.send-button:hover {
+    opacity: 0.9;
+}
+
+.send-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Request Tabs */
+.request-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tab {
+    padding: 0.5rem 1rem;
+    background-color: #3a3a3a;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+}
+
+.tab:hover {
+    background-color: #4a4a4a;
+}
+
+.tab.active {
+    background-color: #7D56F4;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Request Content */
+.param-row, .header-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+}
+
+.param-key, .param-value, .header-key, .header-value {
+    flex: 1;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.remove-param, .remove-header {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-param, .add-header {
+    background-color: #7D56F4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.body-type-selector {
+    margin-bottom: 1rem;
+}
+
+.body-type-selector select {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+#bodyContent {
+    width: 100%;
+    height: 200px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 1rem;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    resize: vertical;
+}
+
+/* Response Viewer */
+.response-viewer {
+    flex: 1;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.response-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #2a2a2a;
+    border-radius: 4px;
+}
+
+.response-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-code {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.status-text {
+    color: #888;
+}
+
+.response-info {
+    display: flex;
+    gap: 1rem;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.response-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#responseBody {
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 200px;
+    max-height: 80vh;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    line-height: 1.6;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block !important;
+}
+
+/* Response Headers */
+#responseHeaders {
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem;
+    min-height: 200px;
+    max-height: 80vh;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    resize: vertical;
+}
+
+#responseHeaders .header-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: #3a3a3a;
+    border-radius: 4px;
+    border: 1px solid #555;
+}
+
+#responseHeaders .header-key {
+    font-weight: bold;
+    color: #7D56F4;
+    min-width: 150px;
+    flex-shrink: 0;
+}
+
+#responseHeaders .header-value {
+    color: #ffffff;
+    word-break: break-all;
+    flex: 1;
+}
+
+/* Response Cookies */
+#responseCookies {
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem;
+    min-height: 200px;
+    max-height: 80vh;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    resize: vertical;
+}
+
+#responseCookies .cookie-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: #3a3a3a;
+    border-radius: 4px;
+    border: 1px solid #555;
+}
+
+#responseCookies .cookie-name {
+    font-weight: bold;
+    color: #7D56F4;
+    min-width: 150px;
+    flex-shrink: 0;
+}
+
+#responseCookies .cookie-value {
+    color: #ffffff;
+    word-break: break-all;
+    flex: 1;
+}
+
+/* Loading State */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #333;
+    }
+    
+    .request-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .method-selector {
+        width: 100%;
+    }
+    
+    .url-input {
+        width: 100%;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
