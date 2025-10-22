@@ -7,7 +7,7 @@ import (
 	"time"
 
 	_ "github.com/mattn/go-sqlite3"
-	"litepost/internal/models"
+	"postgirl/internal/models"
 )
 
 // SQLiteStorage represents the SQLite storage implementation

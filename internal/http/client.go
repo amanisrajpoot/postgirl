@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/go-resty/resty/v2"
-	"litepost/internal/models"
+	"postgirl/internal/models"
 )
 
 // Client represents the HTTP client

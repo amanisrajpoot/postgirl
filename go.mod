@@ -1,4 +1,4 @@
-module litepost
+module postgirl
 
 go 1.24.0
 

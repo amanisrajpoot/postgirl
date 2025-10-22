@@ -4,10 +4,10 @@ import (
 	"testing"
 	"time"
 
-	"litepost/internal/app"
-	"litepost/internal/http"
-	"litepost/internal/models"
-	"litepost/internal/storage/sqlite"
+	"postgirl/internal/app"
+	"postgirl/internal/http"
+	"postgirl/internal/models"
+	"postgirl/internal/storage/sqlite"
 )
 
 func TestHTTPRequest(t *testing.T) {

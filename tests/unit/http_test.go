@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"litepost/internal/app"
-	"litepost/internal/http"
-	"litepost/internal/models"
+	"postgirl/internal/app"
+	"postgirl/internal/http"
+	"postgirl/internal/models"
 )
 
 func TestServiceCreation(t *testing.T) {

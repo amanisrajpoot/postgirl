@@ -1,4 +1,4 @@
-APP=litepost
+APP=postgirl
 VERSION?=$(shell git describe --tags --always --dirty)
 LDFLAGS=-s -w -X main.version=$(VERSION)
 BUILD_CGO=CGO_ENABLED=1 go build -trimpath -ldflags "$(LDFLAGS)"
@@ -25,9 +25,9 @@ build-%:
 	out="$(DIST)/$(APP)-$$os-$$arch$$ext"; \
 	mkdir -p $$(dirname "$$out"); \
 	if [ "$$os" = "darwin" ]; then \
-		GOOS=$$os GOARCH=$$arch $(BUILD_CGO) -o "$$out" ./cmd/$(APP); \
+		GOOS=$$os GOARCH=$$arch $(BUILD_CGO) -o "$$out" ./cmd/postgirl; \
 	else \
-		GOOS=$$os GOARCH=$$arch $(BUILD_STATIC) -o "$$out" ./cmd/$(APP); \
+		GOOS=$$os GOARCH=$$arch $(BUILD_STATIC) -o "$$out" ./cmd/postgirl; \
 	fi
 
 build-all: $(addprefix build-,$(PLATFORMS))

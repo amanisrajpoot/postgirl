@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"litepost/internal/http"
-	"litepost/internal/models"
-	"litepost/internal/storage/sqlite"
+	"postgirl/internal/http"
+	"postgirl/internal/models"
+	"postgirl/internal/storage/sqlite"
 )
 
 // Service represents the main application service

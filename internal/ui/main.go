@@ -5,8 +5,8 @@ import (
 
 	"github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
-	"litepost/internal/app"
-	"litepost/internal/storage/sqlite"
+	"postgirl/internal/app"
+	"postgirl/internal/storage/sqlite"
 )
 
 // AppState represents the current state of the application
@@ -35,7 +35,7 @@ type App struct {
 // NewApp creates a new application instance
 func NewApp() *App {
 	// Initialize storage
-	storage, err := sqlite.NewSQLiteStorage("litepost.db")
+	storage, err := sqlite.NewSQLiteStorage("postgirl.db")
 	if err != nil {
 		// For now, continue without storage
 		storage = nil

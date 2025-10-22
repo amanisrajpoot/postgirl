@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"litepost/internal/models"
+	"postgirl/internal/models"
 )
 
 // EnvironmentService handles environment variable operations

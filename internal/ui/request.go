@@ -6,8 +6,8 @@ import (
 
 	"github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
-	"litepost/internal/app"
-	"litepost/internal/models"
+	"postgirl/internal/app"
+	"postgirl/internal/models"
 )
 
 // RequestModel represents the request builder UI

@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/dop251/goja"
-	"litepost/internal/models"
+	"postgirl/internal/models"
 )
 
 // ScriptEngine handles JavaScript execution

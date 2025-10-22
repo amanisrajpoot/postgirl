@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"litepost/internal/app"
-	"litepost/internal/models"
+	"postgirl/internal/app"
+	"postgirl/internal/models"
 )
 
 // Server represents the web server

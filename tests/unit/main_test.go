@@ -2,8 +2,8 @@ package unit
 
 import (
 	"testing"
-	"litepost/internal/models"
-	"litepost/internal/http"
+	"postgirl/internal/models"
+	"postgirl/internal/http"
 )
 
 func TestRequestModel(t *testing.T) {

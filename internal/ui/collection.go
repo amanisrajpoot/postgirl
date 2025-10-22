@@ -6,7 +6,7 @@ import (
 
 	"github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
-	"litepost/internal/models"
+	"postgirl/internal/models"
 )
 
 // CollectionModel represents the collection manager UI

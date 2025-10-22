@@ -23,25 +23,25 @@ A lightweight Postman alternative built with Go, featuring both Terminal UI and 
 ### Run Web Interface
 ```bash
 # macOS
-./dist/litepost-darwin-arm64 web
+./dist/postgirl-darwin-arm64 web
 
 # Linux
-./dist/litepost-linux-amd64 web
+./dist/postgirl-linux-amd64 web
 
 # Windows
-dist\litepost-windows-amd64.exe web
+dist\postgirl-windows-amd64.exe web
 ```
 
 ### Run Terminal Interface
 ```bash
 # macOS
-./dist/litepost-darwin-arm64 tui
+./dist/postgirl-darwin-arm64 tui
 
 # Linux
-./dist/litepost-linux-amd64 tui
+./dist/postgirl-linux-amd64 tui
 
 # Windows
-dist\litepost-windows-amd64.exe tui
+dist\postgirl-windows-amd64.exe tui
 ```
 
 ## 🌐 Web Interface
@@ -50,12 +50,12 @@ Open your browser to `http://localhost:8080` after starting the web interface.
 
 ## 📦 Available Executables
 
-- `litepost-darwin-arm64` - macOS (Apple Silicon)
-- `litepost-darwin-amd64` - macOS (Intel)
-- `litepost-linux-amd64` - Linux (AMD64)
-- `litepost-linux-arm64` - Linux (ARM64)
-- `litepost-windows-amd64.exe` - Windows (AMD64)
-- `litepost-windows-arm64.exe` - Windows (ARM64)
+- `postgirl-darwin-arm64` - macOS (Apple Silicon)
+- `postgirl-darwin-amd64` - macOS (Intel)
+- `postgirl-linux-amd64` - Linux (AMD64)
+- `postgirl-linux-arm64` - Linux (ARM64)
+- `postgirl-windows-amd64.exe` - Windows (AMD64)
+- `postgirl-windows-arm64.exe` - Windows (ARM64)
 
 ## 🔧 Development
 
@@ -64,7 +64,7 @@ Open your browser to `http://localhost:8080` after starting the web interface.
 go mod download
 
 # Run in development
-go run ./cmd/litepost web
+go run ./cmd/postgirl web
 ```
 
 ## 📝 License

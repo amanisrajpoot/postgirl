@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"litepost/internal/app"
-	"litepost/internal/models"
+	"postgirl/internal/app"
+	"postgirl/internal/models"
 )
 
 func TestEnvironmentService(t *testing.T) {

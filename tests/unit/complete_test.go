@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"litepost/internal/app"
-	"litepost/internal/models"
-	"litepost/internal/storage/sqlite"
+	"postgirl/internal/app"
+	"postgirl/internal/models"
+	"postgirl/internal/storage/sqlite"
 )
 
 func TestCompleteWorkflow(t *testing.T) {
