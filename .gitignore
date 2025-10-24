@@ -1,36 +1,23 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-litepost
-litepost.exe
-
-# Test binary, built with `go test -c`
-*.test
-
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-# Go workspace file
-go.work
+# Distribution files
+dist/
+dist-final/
+dist-signed/
+dist-standalone/
 
 # Build artifacts
-dist/
-*.zip
+*.exe
+*.dmg
+*.deb
+*.rpm
 *.tar.gz
+*.zip
 
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
+# Database files
+*.db
+*.sqlite
+*.sqlite3
 
-# OS generated files
+# macOS
 .DS_Store
 .DS_Store?
 ._*
@@ -38,3 +25,25 @@ dist/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Certificates and keys
+*.crt
+*.key
+*.pem
+
+# Test files
+test-*

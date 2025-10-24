@@ -1,8 +1,10 @@
 package web
 
 import (
+	"embed"
 	"encoding/json"
 	"fmt"
+	"io/fs"
 	"log"
 	"net/http"
 	"time"
@@ -19,7 +21,7 @@ type Server struct {
 }
 
 // NewServer creates a new web server
-func NewServer(app *app.Service, port int) *Server {
+func NewServer(app *app.Service, port int, assets embed.FS) *Server {
 	mux := http.NewServeMux()
 	
 	// Create server instance
@@ -32,13 +34,13 @@ func NewServer(app *app.Service, port int) *Server {
 	}
 	
 	// Setup routes
-	s.setupRoutes(mux)
+	s.setupRoutes(mux, assets)
 	
 	return s
 }
 
 // setupRoutes configures all the HTTP routes
-func (s *Server) setupRoutes(serveMux *http.ServeMux) {
+func (s *Server) setupRoutes(serveMux *http.ServeMux, assets embed.FS) {
 	// Create gorilla/mux router
 	router := mux.NewRouter()
 	
@@ -65,7 +67,17 @@ func (s *Server) setupRoutes(serveMux *http.ServeMux) {
 	router.HandleFunc("/health", s.handleHealth).Methods("GET")
 	
 	// Static files (catch-all for non-API routes)
-	router.PathPrefix("/").Handler(http.FileServer(http.Dir("web/static/")))
+	// Create a sub-filesystem for the static files
+	staticFS, err := fs.Sub(assets, "web/static")
+	if err != nil {
+		log.Printf("Error creating static filesystem: %v", err)
+		// Fallback to serving a simple message
+		router.PathPrefix("/").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			http.Error(w, "Static files not found", http.StatusNotFound)
+		})
+	} else {
+		router.PathPrefix("/").Handler(http.FileServer(http.FS(staticFS)))
+	}
 	
 	// Mount router
 	serveMux.Handle("/", router)

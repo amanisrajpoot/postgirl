@@ -1,20 +1,20 @@
 {
   "version": "0.1.0",
   "description": "Lightweight Postman alternative",
-  "homepage": "https://github.com/yourname/litepost",
+  "homepage": "https://github.com/yourname/postgirl",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/yourname/litepost/releases/download/v0.1.0/litepost-windows-amd64.zip",
+      "url": "https://github.com/yourname/postgirl/releases/download/v0.1.0/postgirl-windows-amd64.zip",
       "hash": "PUT_SHA256_HERE"
     }
   },
-  "bin": "litepost-windows-amd64\\litepost.exe",
+  "bin": "postgirl-windows-amd64\\postgirl.exe",
   "checkver": "github",
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/yourname/litepost/releases/download/$version/litepost-windows-amd64.zip"
+        "url": "https://github.com/yourname/postgirl/releases/download/$version/postgirl-windows-amd64.zip"
       }
     }
   }

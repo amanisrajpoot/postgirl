@@ -2,7 +2,7 @@
 Type=Application
 Name=Litepost
 Comment=Lightweight Postman alternative
-Exec=/absolute/path/to/run-litepost.sh
+Exec=/absolute/path/to/run-postgirl.sh
 Icon=utilities-terminal
 Terminal=false
 Categories=Development;Network;

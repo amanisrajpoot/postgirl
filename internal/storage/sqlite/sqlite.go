@@ -161,7 +161,7 @@ func (s *SQLiteStorage) SaveResponse(resp *models.Response) error {
 }
 
 // GetResponses retrieves responses for a request
-func (s *SQLiteStorage) GetResponses(requestID string) ([]*models.Response, error) {
+func (s *SQLiteStorage) GetResponsesForRequest(requestID string) ([]*models.Response, error) {
 	query := `SELECT id, request_id, status_code, headers, body, size, duration, created_at
 		FROM responses WHERE request_id = ? ORDER BY created_at DESC`
 
@@ -193,7 +193,7 @@ func (s *SQLiteStorage) GetResponses(requestID string) ([]*models.Response, erro
 }
 
 // ListRequests returns all requests
-func (s *SQLiteStorage) ListRequests() ([]*models.Request, error) {
+func (s *SQLiteStorage) GetAllRequests() ([]*models.Request, error) {
 	query := `SELECT id, name, method, url, headers, query_params, body, auth, pre_script, post_script, tests, collection_id, folder_id, created_at, updated_at
 		FROM requests ORDER BY updated_at DESC`
 
@@ -266,7 +266,7 @@ func (s *SQLiteStorage) GetCollection(id string) (*models.Collection, error) {
 }
 
 // ListCollections returns all collections
-func (s *SQLiteStorage) ListCollections() ([]*models.Collection, error) {
+func (s *SQLiteStorage) GetAllCollections() ([]*models.Collection, error) {
 	query := `SELECT id, name, description, variables, created_at, updated_at
 		FROM collections ORDER BY updated_at DESC`
 
@@ -330,7 +330,7 @@ func (s *SQLiteStorage) GetEnvironment(id string) (*models.Environment, error) {
 }
 
 // ListEnvironments returns all environments
-func (s *SQLiteStorage) ListEnvironments() ([]*models.Environment, error) {
+func (s *SQLiteStorage) GetAllEnvironments() ([]*models.Environment, error) {
 	query := `SELECT id, name, variables, is_active, created_at, updated_at
 		FROM environments ORDER BY updated_at DESC`
 

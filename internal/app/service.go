@@ -6,19 +6,19 @@ import (
 
 	"postgirl/internal/http"
 	"postgirl/internal/models"
-	"postgirl/internal/storage/sqlite"
+	"postgirl/internal/storage"
 )
 
 // Service represents the main application service
 type Service struct {
 	httpClient        *http.Client
-	storage           *sqlite.SQLiteStorage
+	storage           storage.Storage
 	environmentService *EnvironmentService
 	scriptEngine      *ScriptEngine
 }
 
 // NewService creates a new service instance
-func NewService(storage *sqlite.SQLiteStorage) *Service {
+func NewService(storage storage.Storage) *Service {
 	// Create environment service
 	envService := NewEnvironmentService()
 	
@@ -119,7 +119,7 @@ func (s *Service) GetRequest(id string) (*models.Request, error) {
 
 // GetResponses retrieves responses for a request
 func (s *Service) GetResponses(requestID string) ([]*models.Response, error) {
-	return s.storage.GetResponses(requestID)
+	return s.storage.GetResponsesForRequest(requestID)
 }
 
 // CreateNewRequest creates a new request with default values
@@ -158,7 +158,7 @@ func (s *Service) SetEnvironment(env *models.Environment) {
 
 // ListRequests returns all requests
 func (s *Service) ListRequests() ([]*models.Request, error) {
-	return s.storage.ListRequests()
+	return s.storage.GetAllRequests()
 }
 
 // DeleteRequest deletes a request by ID
@@ -179,7 +179,7 @@ func (s *Service) GetCollection(id string) (*models.Collection, error) {
 
 // ListCollections returns all collections
 func (s *Service) ListCollections() ([]*models.Collection, error) {
-	return s.storage.ListCollections()
+	return s.storage.GetAllCollections()
 }
 
 // DeleteCollection deletes a collection by ID
@@ -200,7 +200,7 @@ func (s *Service) GetEnvironmentFromDB(id string) (*models.Environment, error) {
 
 // ListEnvironmentsFromDB returns all environments from the database
 func (s *Service) ListEnvironmentsFromDB() ([]*models.Environment, error) {
-	return s.storage.ListEnvironments()
+	return s.storage.GetAllEnvironments()
 }
 
 // DeleteEnvironmentFromDB deletes an environment from the database

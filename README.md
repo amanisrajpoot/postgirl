@@ -1,4 +1,4 @@
-# 🚀 Litepost
+# 🚀 Postgirl
 
 A lightweight Postman alternative built with Go, featuring both Terminal UI and Web UI.
 
@@ -12,36 +12,49 @@ A lightweight Postman alternative built with Go, featuring both Terminal UI and 
 - **Environments**: Variable management across requests
 - **Scripting**: Pre-request and post-response JavaScript scripts
 - **Cross-platform**: macOS, Linux, Windows (AMD64 & ARM64)
+- **Standalone**: Single executable files with no dependencies
 
 ## 🚀 Quick Start
 
 ### Build All Platforms
 ```bash
-./build.sh
+./build-final.sh
 ```
 
 ### Run Web Interface
 ```bash
 # macOS
-./dist/postgirl-darwin-arm64 web
+./dist-final/postgirl-darwin-arm64
 
 # Linux
-./dist/postgirl-linux-amd64 web
+./dist-final/postgirl-linux-amd64
 
 # Windows
-dist\postgirl-windows-amd64.exe web
+dist-final\postgirl-windows-amd64.exe
 ```
 
 ### Run Terminal Interface
 ```bash
 # macOS
-./dist/postgirl-darwin-arm64 tui
+./dist-final/postgirl-darwin-arm64 tui
 
 # Linux
-./dist/postgirl-linux-amd64 tui
+./dist-final/postgirl-linux-amd64 tui
 
 # Windows
-dist\postgirl-windows-amd64.exe tui
+dist-final\postgirl-windows-amd64.exe tui
+```
+
+### Interactive Launcher (Recommended)
+```bash
+# macOS
+./dist-final/postgirl-launcher-darwin-arm64
+
+# Linux
+./dist-final/postgirl-launcher-linux-amd64
+
+# Windows
+dist-final\postgirl-launcher-windows-amd64.exe
 ```
 
 ## 🌐 Web Interface

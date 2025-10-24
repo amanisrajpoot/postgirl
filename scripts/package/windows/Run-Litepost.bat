@@ -1,6 +1,6 @@
 @echo off
 cd /d "%~dp0"
-set BIN=litepost.exe
+set BIN=postgirl.exe
 if not exist "%BIN%" (
   echo %BIN% not found.
   pause
